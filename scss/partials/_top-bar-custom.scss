@@ -1,0 +1,131 @@
+// STANDARD NAV
+
+.top-bar{
+  // PLACEHOLDER
+  // border: 1px solid red;
+}
+
+.top-bar-title{
+  // PLACEHOLDER
+  // border: 1px solid green;
+
+  float: none;
+  margin-right: 0;
+
+  @include breakpoint(large){
+    float: left;
+  }
+}
+
+.mobile-menu-button{
+  // PLACEHOLDER
+  // border: 1px solid orange;
+
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  // SETTING - POSITION OF MENU ICON
+  padding-top: 0.5rem;
+  padding-bottom: 2.2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  .menu-icon:hover{
+    &:after{
+      // SETTING - COLOR OF ICON ACTIVE/HOVER STATE
+      background: lighten($teal, 30%);
+      box-shadow: 0 7px 0 lighten($teal, 30%), 0 14px 0 lighten($teal, 30%);
+    }
+  }
+}
+
+#desktop-menu{
+}
+
+#responsive-menu{
+}
+
+.top-bar-right{
+}
+
+.top-bar-right > .menu{
+  @include breakpoint(large){
+    // SETTING - MENU DISTANCE FROM TOP
+    margin-top: 1rem;
+  }
+}
+
+.top-bar-right > .menu > li{
+  display: block;
+
+  + li{
+    // SETTING - COLOR OF MOBILE MENU DIVIDERS
+    border-top: 1px solid darken($teal, 10%);
+    
+    @include breakpoint(large){
+      border-top: 0;
+    }
+  }
+
+  @include breakpoint(large){
+    display: table-cell;
+  }
+
+  a{
+    color: white;
+
+    @include breakpoint(large){
+      &:hover{
+        // SETTING - COLOR OF LINK HOVERS
+        color: lighten($teal, 30%);
+      }
+    }
+  }
+
+  &.active > a{
+    font-weight: bold;
+    background-color: transparent;
+  }
+
+  &.is-dropdown-submenu-parent > a{
+    @include breakpoint(large){
+      padding-right: 2rem;
+    }
+  }
+
+  &.is-dropdown-submenu-parent > a::after{
+    @include breakpoint(large){
+      margin-top: -1px;
+      right: 1rem;
+    }
+  }
+
+  // LARGE DROPDOWN MENU
+  ul.menu{
+    @include breakpoint(large){
+      // SETTING - COLOR OF DROPDOWN MENU BACKGROUND
+      background-color: $teal;
+    }
+
+    li {
+
+      &.active a{
+        font-weight: bold;
+        background-color: darken($teal, 5%);
+      }
+
+      a{
+
+        @include breakpoint(large){
+          padding-left: 1rem;
+          padding-right: 1rem;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

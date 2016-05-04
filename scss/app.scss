@@ -1,0 +1,424 @@
+@charset 'utf-8';
+
+// FOUNDATION - KELLI NOTES: ADJUST SETTINGS HERE (color, margin, breakpoints)
+@import 'partials/foundation_settings'; 
+@import 'foundation'; // KELLI NOTES: REQUIRED, DON'T TOUCH
+@import 'motion-ui'; // KELLI NOTES: REQUIRED, DON'T TOUCH
+@import 'partials/foundation'; // KELLI NOTES: MOVED ALL INCLUDES TO A PARTIAL
+
+@import 'partials/top-bar-custom'; // KELLI'S CUSTOMIZED TOP BAR
+
+// STYLES
+
+body{
+  background-color: $dark-gray;
+}
+
+// HEADER
+
+header{
+  background-color: $teal;
+  // border: 1px dashed green;
+}
+
+// TYPOGRAPHY
+
+h1{
+  color: darken($blue, 10%);
+  font-weight: 400;
+
+  font-size: 24px;
+  line-height: 28px;
+
+  @include breakpoint(medium){
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  @include breakpoint(large){
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  + p{
+    margin-top: 0.75rem;
+  }
+}
+
+h2,h3,h4,h5,h6{
+  color: darken($blue, 10%);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  @include breakpoint(medium){
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @include breakpoint(large){
+    font-size: 22px;
+    line-height: 26px;
+  }
+  
+  + p{
+    margin-top: 0.5rem;
+
+    @include breakpoint(medium){
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+h3{
+  color: $teal;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin-top: 2rem;
+}
+
+p, li{
+  color: $dark-gray;
+  font-size: 14px;
+  line-height: 19px;
+
+  @include breakpoint(medium){
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  + p{
+    margin-top: 0.5rem;
+  }
+
+  + h2{
+    margin-top: 1rem;
+  }
+}
+
+.generic-content li{
+  margin-bottom: 0.5rem;
+}
+
+p + ul{
+  margin-top: 1rem;
+}
+
+p.small{
+  // color: lighten($dark-gray, 10%);
+  // font-size: 11px;
+  // line-height: 15px;
+
+  @include breakpoint(medium){
+    // font-size: 13px;
+    // line-height: 18px;
+  }
+
+  @include breakpoint(large){
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+// CONTENT
+
+.content{
+  // border: 1px solid green;
+  background-color: white;
+}
+
+// CONTENT - BANNER
+
+.banner-container{
+  // border: 5px solid pink;
+}
+
+.banner{
+  // border: 1px solid red;
+}
+
+.banner-image{
+  // background-color: powderblue;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+
+  @include breakpoint(medium){
+    height: 300px;
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+// CONTENT - HERO
+
+.hero-container{
+  // border: 5px solid pink;
+  // background-color: $dark-gray;
+}
+
+.hero{
+  // border: 1px solid red;
+  padding: 2rem 1rem;
+
+  @include breakpoint(medium){
+    padding: 2rem 2rem;
+  }
+
+  @include breakpoint(large){
+    padding: 3rem 0;
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+h1.hero-title{
+  text-align: center;
+}
+
+h1.hero-title + p.hero-paragraph{
+  margin-top: 1rem;
+
+  @include breakpoint(medium){
+    margin-top: 2rem;
+  }
+}
+
+p.hero-paragraph{
+
+}
+
+span.image-right{
+  float: right;
+  width: 180px;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+
+  img{
+    max-width: 100%;
+  }
+
+  span.caption{
+    font-size: 12px;
+    font-style: italic;
+    line-height: 14px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// CONTENT - GENERIC CONTAINER
+
+.container{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  @include breakpoint(medium){
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @include breakpoint(large){
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .large-8 + .large-4{
+    padding-top: 1rem;
+
+    @include breakpoint(medium){
+      padding-top: 1.4rem;
+    }
+
+    @include breakpoint(large){
+      padding-top: 0;
+    }
+  }
+}
+
+.container h1{
+  text-align: center;
+  margin-bottom: 2rem;
+
+  @include breakpoint(large){
+    text-align: left;
+  }
+}
+
+
+// CONTENT - GENERIC CONTAINER
+
+.generic-container{
+  background-color: white;
+
+  .row{
+
+    @include breakpoint(large){
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch;
+    }
+  }
+
+  .large-4{
+
+    display: none;
+
+    @include breakpoint(large){
+      float: none;
+      flex: 0 0 25%;
+      display: flex;
+    }
+  }
+
+  .large-4 + .large-8{
+    padding-top: 1rem;
+
+    @include breakpoint(medium){
+      padding-top: 1.4rem;
+    }
+
+    @include breakpoint(large){
+      padding-top: 0;
+    }
+  }
+
+  .large-8{
+    background-color: white;
+    float: none;
+    flex: 0 0 75%;
+  }
+}
+
+.sidenav{
+  background-color: $blue;
+  width: 100%;
+
+  @include breakpoint(large){
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  &.sidenav-resources{
+    background-color: $grey-blue;
+
+    ul li{
+      &.active a,
+      &:hover a{
+        background-color: darken($grey-blue, 15%);
+      }
+    }
+  }
+
+  ul{
+    padding:0;
+    margin: 0;
+
+    @include breakpoint(large){
+      width: 100%;
+    }
+
+    li{
+      list-style-type: none;
+      padding:0;
+      margin: 0;
+
+      display: inline-block;
+
+      @include breakpoint(large){
+        display: block;
+      }
+
+      &.active a,
+      &:hover a{
+        background-color: darken($blue, 20%);
+      }
+
+      a{
+        // background-color: yellow;
+        display: block;
+        padding: 0.75rem 2rem;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.generic-content{
+  // padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  @include breakpoint(medium){
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @include breakpoint(large){
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.blog-container{
+    @include breakpoint(medium){
+      padding-top: 0;
+    }
+
+    @include breakpoint(large){
+      padding-top: 1rem;
+    }
+  }
+}
+
+p.notice{
+  background-color: $light-gray;
+  padding: 1rem;
+  font-size: 13px;
+  line-height: 16px;
+  margin-top: 1rem;
+
+  @include breakpoint(medium){
+    margin-top: 2rem;
+  }  
+}
+
+// FOOTER
+
+.footer-container{
+  // border: 5px solid pink;
+  background-color: $dark-gray;
+  padding: 2rem 0;
+}
+
+.footer{
+  // border: 1px solid red;
+  // background-color: orange;
+
+  p{
+    text-align: center;
+    color: darken($medium-gray, 20%);
+    font-size: 12px;
+    line-height: 17px;
+  }
+}

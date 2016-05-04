@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-title">
+        <h2>
+          <a href="/">
+            <span class="title">
+              Site Title
+            </span>
+          </a>
+        </h2>
+        <span class="mobile-menu-button" data-responsive-toggle="responsive-menu" data-hide-for="large">
+          <button class="menu-icon" type="button" data-toggle></button>
+        </span>
+      </div><!--top-bar-title-->
+
+      <div id="responsive-menu" class="hide-for-large clearfix">
+        <div class="top-bar-right">
+          <ul class="accordion menu" data-accordion-menu>
+            <li class="nav-one">
+              <a href="/one">One</a>
+            </li>
+            <li class="nav-two">
+              <a href="/two">Two</a>
+              <ul class="menu vertical">
+                <li class="nav-two-a">
+                  <a href="/two-a">Two A</a>
+                </li>
+                <li class="nav-two-b">
+                  <a href="/two-b">Two B</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div><!--#responsive-menu-->
+
+      <div id="desktop-menu" class="show-for-large clearfix">
+        <div class="top-bar-right">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="nav-one">
+              <a href="/one">One</a>
+            </li>
+            <li class="nav-two">
+              <a href="/two">Two</a>
+              <ul class="menu vertical">
+                <li class="nav-two-a">
+                  <a href="/two-a">Two A</a>
+                </li>
+                <li class="nav-two-b">
+                  <a href="/two-b">Two B</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div><!--#desktop-menu-->
+
+    </div><!--top-bar-->
+  </header>
+
+  <div class='content'>
+    
+    <div class="banner-container">
+      <div class="banner">
+        <div class="banner-image" style="background-image:url('http://placehold.it/1300x500/')">
+        </div>
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+
+    <div class="hero-container">
+      <div class="hero">
+        <h1 class="hero-title">Hello</h1>
+        <p class="hero-paragraph">Hello paragraph.</p>
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+    
+    <div class="container">
+      <div class="row">
+        <div class="small-12 large-8 columns">
+          <h1>
+            Main Page Title
+          </h1>
+          <p>
+            Text
+          </p>
+        </div>
+        <div class="small-12 large-4 columns">
+          <h2>
+            Sidebar Title
+          </h2>
+          <p class="small">
+            Text
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="container">
+      <div class="row">
+        <div class="small-12 large-8 columns">
+          <h1>
+            Main Page Title
+          </h1>
+          <p>
+            Text
+          </p>
+        </div>
+        <div class="small-12 large-4 columns">
+          <h2>
+            Sidebar Title
+          </h2>
+          <p class="small">
+            Text
+          </p>
+        </div>
+      </div>
+    </div>-->
+
+  </div><!--#content-->
+
+  <div class="footer-container">
+    <div class="row">
+      <div class='small-12 columns'>
+        <div class="footer">
+          <p>Copyright &copy;2016 Goma Games LLC</p>
+        </div><!--.footer-->
+      </div>
+    </div><!--.row-->
+  </div><!--.footer-container-->
+    
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/what-input.js"></script>
+  <script src="/scripts/foundation.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>

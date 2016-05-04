@@ -45,25 +45,36 @@
 // 1. Global
 // ---------
 
-$teal: #35A4A3;
-$blue: #8BC8EB;
-$grey-blue: #7292A8;
+// GOMA GAMES
+$teal: #75C4BF;
+$orange: #E78938;
+$tan: #FAF1DB;
+$dark-tan: #DDD3BE;
+$brown: #454035;
+
+// THEME
+$teal: #3CB5B5;
+$yellow: #FCD920;
+$pink: #E53B51;
+$orange: #EC6C20;
+
+// FOUNDATION
+$white: #FEFEFE;
+$light-gray: #E6E6E6;
+$medium-gray: #BCBCBC;
+$dark-gray: #343434;
+$black: #0A0A0A;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1000);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: $teal,
-  secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
+  primary: $orange,
+  secondary: $yellow,
+  success: $teal,
+  warning: $orange,
+  alert: $pink,
 );
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #454545;
-$black: #0a0a0a;
-$white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Lato', Helvetica, Arial, sans-serif;

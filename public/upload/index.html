@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/styles/app.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <div class="top-bar-title">
+          <h2>
+            <a href="/">
+              <span class="title">
+                SpawnHero 2
+              </span>
+              <span class="subtitle">
+                Maui Stem Conference 2016
+              </span>
+            </a>
+          </h2>
+        </div><!--top-bar-title-->
+      </div>
+    </div><!--top-bar-->
+  </header>
+
+  <div class='content'>
+
+    <div class="hero-container">
+      <div class="hero">
+        <h1 class="hero-title">Upload a Game</h1>
+        <p class="hero-paragraph">Copy and Paste the code from your <span>something.js</span> into the form below to add your game level to this website!</p>
+      </div><!--.banner-->
+    </div><!--.banner-container-->
+
+    <div class="standard-container">
+      <form action="">
+        <div class="row">
+          <div class="small-12 columns">
+            <label for="game-title">Game Title
+              <input type="text" id="game-title" placeholder="Game Title">
+            </label>
+          </div>
+          <div class="small-12 columns">
+            <label for="game-developer">Game Developer Name
+              <input type="text" id="game-developer" placeholder="Your Name">
+            </label>
+          </div>
+          <div class="small-12 columns">
+            <label for="game-code">Game Code
+              <textarea id="game-code" placeholder="Paste all code from something.js here."></textarea>
+            </label>
+          </div>
+          <div class="small-12 columns">
+            <label for="file-upload" class="button">Upload File</label>
+            <input type="file" id="file-upload" class="show-for-sr">
+          </div>
+          <div class="small-12 columns">
+            <div class="submit-game-footer">
+              <input type="submit" class="submit-game-button" value="Submit Your Game">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div><!--#content-->
+
+  <div class="footer-container">
+    <div class="row">
+      <div class='small-12 columns'>
+        <div class="footer">
+          <p><a href="http://stem.gomagames.com">stem.gomagames.com</a></p>
+        </div><!--.footer-->
+      </div>
+    </div><!--.row-->
+  </div><!--.footer-container-->
+    
+  <script src="/scripts/jquery.js"></script>
+  <script src="/scripts/what-input.js"></script>
+  <script src="/scripts/foundation.js"></script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>

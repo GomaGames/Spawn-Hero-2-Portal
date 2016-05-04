@@ -1,12 +1,39 @@
 @charset 'utf-8';
 
-// FOUNDATION - KELLI NOTES: ADJUST SETTINGS HERE (color, margin, breakpoints)
 @import 'partials/foundation_settings'; 
-@import 'foundation'; // KELLI NOTES: REQUIRED, DON'T TOUCH
-@import 'motion-ui'; // KELLI NOTES: REQUIRED, DON'T TOUCH
-@import 'partials/foundation'; // KELLI NOTES: MOVED ALL INCLUDES TO A PARTIAL
+@import 'foundation';
+@import 'motion-ui';
+@import 'partials/foundation';
+@import 'partials/top-bar-custom';
 
-@import 'partials/top-bar-custom'; // KELLI'S CUSTOMIZED TOP BAR
+// MIXINS
+
+@mixin big-button($button-color: $yellow){
+  display: block;
+  background-color: $button-color;
+  color: darken($button-color, 25%);
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  border: 0;
+
+  &:hover{
+    background-color: darken($button-color, 10%);
+  }
+
+  @include breakpoint(medium){
+    display: inline-block;
+    padding: 1rem 3rem;
+  }
+
+  @include breakpoint(large){
+    padding: 1rem 4.5rem;
+  }
+}
+
+.big-button{
+  @include big-button;
+}
+
 
 // STYLES
 
@@ -17,14 +44,13 @@ body{
 // HEADER
 
 header{
-  background-color: $teal;
-  // border: 1px dashed green;
+  background-color: $dark-gray;
 }
 
 // TYPOGRAPHY
 
 h1{
-  color: darken($blue, 10%);
+  color: darken($teal, 10%);
   font-weight: 400;
 
   font-size: 24px;
@@ -47,7 +73,7 @@ h1{
 }
 
 h2,h3,h4,h5,h6{
-  color: darken($blue, 10%);
+  color: darken($teal, 10%);
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -109,14 +135,6 @@ p + ul{
 }
 
 p.small{
-  // color: lighten($dark-gray, 10%);
-  // font-size: 11px;
-  // line-height: 15px;
-
-  @include breakpoint(medium){
-    // font-size: 13px;
-    // line-height: 18px;
-  }
 
   @include breakpoint(large){
     font-size: 13px;
@@ -127,22 +145,20 @@ p.small{
 // CONTENT
 
 .content{
-  // border: 1px solid green;
-  background-color: white;
+  background-color: $white;
 }
 
 // CONTENT - BANNER
 
 .banner-container{
-  // border: 5px solid pink;
+
 }
 
 .banner{
-  // border: 1px solid red;
+
 }
 
 .banner-image{
-  // background-color: powderblue;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -158,13 +174,19 @@ p.small{
 // CONTENT - HERO
 
 .hero-container{
-  // border: 5px solid pink;
-  // background-color: $dark-gray;
+  background-color: $orange;
+  background: repeating-linear-gradient(
+    90deg,
+    lighten($orange, 5%),
+    lighten($orange, 5%) 1px,
+    $orange 1px,
+    $orange 8px
+  );
 }
 
 .hero{
-  // border: 1px solid red;
-  padding: 2rem 1rem;
+  text-align: center;
+  padding: 2rem 0.625rem;
 
   @include breakpoint(medium){
     padding: 2rem 2rem;
@@ -179,6 +201,27 @@ p.small{
 
 h1.hero-title{
   text-align: center;
+  color: $white;
+}
+
+p.hero-paragraph{
+  color: $white;
+  text-align: center;
+  max-width: 300px;
+  margin: auto;
+
+  @include breakpoint(medium){
+    max-width: 550px;
+  }
+
+  @include breakpoint(large){
+    max-width: 600px;
+  }
+
+  span{
+    font-weight: bold;
+    color: $yellow;
+  }
 }
 
 h1.hero-title + p.hero-paragraph{
@@ -192,6 +235,29 @@ h1.hero-title + p.hero-paragraph{
 p.hero-paragraph{
 
 }
+
+a.upload-button{
+  @include big-button;
+
+  margin-top: 1rem;
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+
+  @include breakpoint(medium){
+    display: inline-block;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoint(large){
+    padding: 1rem 4.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// FLOAT-RIGHT IMAGE
 
 span.image-right{
   float: right;
@@ -216,9 +282,10 @@ span.image-right{
   }
 }
 
-// CONTENT - GENERIC CONTAINER
+// STANDARD CONTAINER
+// Has a main column on left with a sidebar on right.
 
-.container{
+.standard-container{
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
@@ -251,7 +318,7 @@ span.image-right{
   }
 }
 
-.container h1{
+.standard-container h1{
   text-align: center;
   margin-bottom: 2rem;
 
@@ -261,10 +328,11 @@ span.image-right{
 }
 
 
-// CONTENT - GENERIC CONTAINER
+// GENERIC CONTAINER
+// Has a sidebar nav on left with a main column on right.
 
 .generic-container{
-  background-color: white;
+  background-color: $white;
 
   .row{
 
@@ -299,14 +367,14 @@ span.image-right{
   }
 
   .large-8{
-    background-color: white;
+    background-color: $white;
     float: none;
     flex: 0 0 75%;
   }
 }
 
 .sidenav{
-  background-color: $blue;
+  background-color: $teal;
   width: 100%;
 
   @include breakpoint(large){
@@ -315,12 +383,12 @@ span.image-right{
   }
 
   &.sidenav-resources{
-    background-color: $grey-blue;
+    background-color: $teal;
 
     ul li{
       &.active a,
       &:hover a{
-        background-color: darken($grey-blue, 15%);
+        background-color: darken($teal, 15%);
       }
     }
   }
@@ -346,14 +414,13 @@ span.image-right{
 
       &.active a,
       &:hover a{
-        background-color: darken($blue, 20%);
+        background-color: darken($teal, 20%);
       }
 
       a{
-        // background-color: yellow;
         display: block;
         padding: 0.75rem 2rem;
-        color: white;
+        color: $white;
         cursor: pointer;
       }
     }
@@ -361,7 +428,6 @@ span.image-right{
 }
 
 .generic-content{
-  // padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -403,22 +469,229 @@ p.notice{
   }  
 }
 
+// GAMES CONTAINER
+
+.games-container{
+  background-color: $white;
+  // background: repeating-linear-gradient(
+  //   0deg,
+  //   #DDDDDD,
+  //   #DDDDDD 1px,
+  //   #EFEFEF 1px,
+  //   #EFEFEF 5px
+  // );
+
+  padding: 0.75rem 0 0;
+
+  @include breakpoint(medium){
+    padding: 1.75rem 0 0.75rem;
+  }
+
+  @include breakpoint(large){
+    padding: 4rem 0 3.25rem;
+  }
+
+  @media only screen and (min-width: 900px) and (max-width:1050px){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .game{
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+
+    @include breakpoint(medium){
+      margin-bottom: 1.75rem;
+    }
+
+    .row{
+      margin:0;
+      padding:0;
+    }
+
+    // .small-6 + .small-6{
+    //   border-left: 1px solid red;
+    // }
+
+    .columns{
+      margin:0;
+      padding:0;
+    }
+  }
+
+  .game-inner{
+    padding: 1rem 0;
+    margin: 0 1.25rem;
+
+    @include breakpoint(large){
+      min-height: 178px;
+      position: relative;
+    }
+
+    // LEFT
+
+    h2{
+      padding:0;
+      margin:0;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 3px;
+      color: $white;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @include breakpoint(large){
+        font-size: 23px;
+        line-height: 27px;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    h3{
+      padding:0;
+      margin:0;
+      font-size: 13px;
+      line-height: 15px;
+      font-weight: 400;
+      color: $white;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    a.play-button{
+      display: block;
+      margin-top: 1.5rem;
+      padding: 0.5rem 0;
+      text-align: center;
+      border-radius: 2px;
+      color: $white;
+
+      @include breakpoint(large){
+        position: absolute;
+        bottom: 1.25rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .column{
+    &:nth-of-type(4n+4){
+      .game{
+        background-color: $orange;
+      }
+      a.play-button{
+        background-color: lighten($orange, 15%);
+
+        &:hover{
+          background-color: lighten($orange, 25%);
+        }
+      }
+      h3{
+        color: lighten($orange, 20%);
+      }
+    }
+    &:nth-of-type(4n+1){
+      .game{
+        background-color: $pink;
+      }
+      a.play-button{
+        background-color: lighten($pink, 15%);
+
+        &:hover{
+          background-color: lighten($pink, 25%);
+        }
+      }
+      h3{
+        color: lighten($pink, 20%);
+      }
+    }
+    &:nth-of-type(4n+2){
+      .game{
+        background-color: $teal;
+      }
+      a.play-button{
+        background-color: lighten($teal, 15%);
+
+        &:hover{
+          background-color: lighten($teal, 25%);
+        }
+      }
+      h3{
+        color: lighten($teal, 30%);
+      }
+    }
+    &:nth-of-type(4n+3){
+      .game{
+        background-color: $yellow;
+      }
+      a.play-button{
+        background-color: lighten($yellow, 25%);
+        color: darken($yellow, 15%);
+
+        &:hover{
+          background-color: lighten($yellow, 35%);
+        }
+      }
+      h2{
+        color: darken($yellow, 25%);
+      }
+      h3{
+        color: darken($yellow, 20%);
+      }
+    }
+  }
+}
+
+// FORM
+
+.submit-game-footer{
+  border-top: 1px solid $light-gray;
+  text-align: center;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  @include breakpoint(large){
+    margin-top: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .submit-game-button{
+    @include big-button($teal);
+    margin: auto;
+  }
+}
+
 // FOOTER
 
 .footer-container{
-  // border: 5px solid pink;
   background-color: $dark-gray;
-  padding: 2rem 0;
+  padding: 1.25rem 0;
 }
 
 .footer{
-  // border: 1px solid red;
-  // background-color: orange;
 
   p{
     text-align: center;
     color: darken($medium-gray, 20%);
     font-size: 12px;
     line-height: 17px;
+
+    a{
+      color: darken($medium-gray, 20%);
+
+      &:hover{
+        color: $medium-gray;
+      }
+    }
   }
 }

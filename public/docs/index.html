@@ -85,15 +85,25 @@ Settings.hero_1.speed = 300;
 Settings.enemy.default_skin = "assets/images/graphic-06.png";
 </code></pre>
 
-<h3>Wall Skin</h3>
-<p>This sets an appearance for all wall tiles.</p>
-<pre><code>Settings.wall.skin = "assets/images/graphic-39.png";
+<h3>Wall Default Skin</h3>
+<p>This sets a default appearance for wall tiles.</p>
+<pre><code>Settings.wall.default_skin = "assets/images/graphic-39.png";
 </code></pre>
 
 <h3>Gem Defaults</h3>
 <p>This sets a default points value and appearance for gems. These settings can be overriden for each gem placed on the map.</p>
 <pre><code>Settings.gem.default_points = 5;
 Settings.gem.default_skin = "assets/images/graphic-06.png";
+</code></pre>
+
+<h3>Powerup &amp; Hazard Defaults</h3>
+<p>This sets a default durations and skins for the "freeze", "speed" and "slow" items.</p>
+<pre><code>Settings.freeze.default_skin = "assets/images/graphic-50.png";
+Settings.freeze.default_duration = 3;
+Settings.speed.default_skin = "assets/images/game_good.png";
+Settings.speed.default_duration = 2;
+Settings.slow.default_skin = "assets/images/graphic-45.png";
+Settings.slow.default_duration = 2;
 </code></pre>
 
 <h3>Game Assets</h3>
@@ -119,23 +129,29 @@ Settings.gem.default_skin = "assets/images/graphic-06.png";
 </code></pre>
 
 <h3>Wall</h3>
-<p>Create a wall object and place it at x,y position.</p>
-
-<pre><code>Spawn.wall(120,120);
+<ul>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a wall at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.wall(120, 120);
 </code></pre>
-      
+  </li>
+  <li>The third argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.wall(120, 120, "assets/images/graphic016.png");
+</code></pre>
+  </li>
+</ul>
+
 <h3>Enemy</h3>
 <ul>
   <li>The first 2 arguments <em>x</em> and <em>y</em> spawn an enemy at ( x,y ) position. The third argument is a direction in quote marks. It is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). These first 3 arguments are all required.
-<pre><code>Spawn.enemy(120,120, "down");
+<pre><code>Spawn.enemy(120, 120, "down");
 </code></pre>
   </li>
   <li>The fourth argument is enemy speed (optional). If it is not set, the default speed will be used. Speed is defined in milliseconds.
-<pre><code>Spawn.enemy(120,120, "down", 600);
+<pre><code>Spawn.enemy(120, 120, "down", 600);
 </code></pre>
   </li>
   <li>The fifth argument is skin (optional). If it is not set, the default will be used.
-<pre><code>Spawn.enemy(120,120, "down", 600, "assets/images/graphic016.png");
+<pre><code>Spawn.enemy(120, 120, "down", 600, "assets/images/graphic016.png");
 </code></pre>
   </li>
 </ul>
@@ -143,33 +159,70 @@ Settings.gem.default_skin = "assets/images/graphic-06.png";
 <h3>Gem</h3>
 <ul>
   <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a gem at ( x,y ) position. These first 2 arguments are required.
-<pre><code>Spawn.gem(120,120);
+<pre><code>Spawn.gem(120, 120);
 </code></pre>
   </li>
   <li>The third argument is a point value for the gem (optional). If a value is not set, the default value will be used
-<pre><code>Spawn.gem(120,120, 10);
+<pre><code>Spawn.gem(120, 120, 10);
 </code></pre>
   </li>
   <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
-<pre><code>Spawn.gem(120,120, 10, "assets/images/graphic016.png");
+<pre><code>Spawn.gem(120, 120, 10, "assets/images/graphic016.png");
 </code></pre>
   </li>
 </ul>
         
 <h3>Speed</h3>
-<p>Create a "speed" powerup. It makes the player move faster. Player will speed up for the duration defined in Settings.</p>
-
-<pre><code>Spawn.speed(160,160);</code></pre>
+<ul>
+  <li>A "speed" powerup makes the player move faster. The player will speed up for the duration defined by the Settings default, or by the third argument in the function call.</li>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a speed item at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.speed(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a duration for the powerup. If a value is not set, the default value will be used. This value is set in milliseconds.
+<pre><code>Spawn.speed(120, 120, 100);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.speed(120, 120, 10, "assets/images/graphic016.png");
+</code></pre>
+  </li>
+</ul>
 
 <h3>Slow</h3>
-<p>Create a "slow" hazard. It makes the player move slower. Player will be slowed down for the duration defined in Settings.</p>
-
-<pre><code>Spawn.slow(160,160);</code></pre>
+<ul>
+  <li>A "slow" hazard makes the player move slowly. The player will slow down for the duration defined by the Settings default, or by the third argument in the function call.</li>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a slow item at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.slow(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a duration for the hazard. If a value is not set, the default value will be used. This value is set in milliseconds.
+<pre><code>Spawn.slow(120, 120, 100);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.slow(120, 120, 10, "assets/images/graphic016.png");
+</code></pre>
+  </li>
+</ul>
 
 <h3>Freeze</h3>
-<p>Create a "freeze" powerup. It will freeze the player for the duration defined in Settings.</p>
+<ul>
+  <li>A "freeze" hazard makes the player stop completely. The player will be frozen for the duration defined by the Settings default, or by the third argument in the function call.</li>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a freeze item at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.freeze(120, 120);
+</code></pre>
+  </li>
+  <li>The third argument is a duration for the hazard. If a value is not set, the default value will be used. This value is set in milliseconds.
+<pre><code>Spawn.freeze(120, 120, 100);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.freeze(120, 120, 10, "assets/images/graphic016.png");
+</code></pre>
+  </li>
+</ul>
 
-<pre><code>Spawn.freeze(160,160);</code></pre>
           
 <!-- END DOCS -->
 

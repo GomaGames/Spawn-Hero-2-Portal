@@ -4365,16 +4365,31 @@ h2 {
       font-size: 22px;
       line-height: 26px; } }
 
-h3, h4, h5, h6 {
+h3 {
+  color: #3CB5B5;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+  font-size: 16px;
+  line-height: 18px; }
+  @media screen and (min-width: 40em) {
+    h3 {
+      font-size: 20px;
+      line-height: 24px; } }
+  @media screen and (min-width: 56.25em) {
+    h3 {
+      font-size: 22px;
+      line-height: 26px; } }
+
+h4, h5, h6 {
   color: #E53B51;
   font-size: 14px;
   line-height: 16px; }
   @media screen and (min-width: 40em) {
-    h3, h4, h5, h6 {
+    h4, h5, h6 {
       font-size: 16px;
       line-height: 22px; } }
   @media screen and (min-width: 56.25em) {
-    h3, h4, h5, h6 {
+    h4, h5, h6 {
       font-size: 16px;
       line-height: 22px; } }
 
@@ -4947,6 +4962,17 @@ code {
   code u {
     text-decoration: none;
     color: #777; }
+
+li > u {
+  background-color: #2A2A2A;
+  font-family: 'Ubuntu Mono', 'Courier New', 'courier', sans-serif;
+  color: #EEE;
+  font-weight: normal;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-top: 0.5rem; }
 
 .footer-container {
   background-color: #343434;

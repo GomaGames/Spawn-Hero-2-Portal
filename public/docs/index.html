@@ -52,7 +52,7 @@
             SpawnHero 2
           </h2>
           
-          <p>The only file that needs to be edited is the <strong style="">game.js</strong> file. This is what a game.js skeleton file looks like:</p>
+          <p>The only file that needs to be edited is the <strong style="">game.js</strong> file. This is what a game.js file looks like initially:</p>
           
           <!-- DOCS -->
 
@@ -116,13 +116,19 @@ Game.powerup_skin_slow = "<u>file path</u>";
 <h2>Game Initializer (Game.init)</h2>
 <p>These functions and commands can be called inside the Game Initializer</p>
 
-<h3>Game.score</h3>
+<pre>
+<code><u>// Game Initializer</u>
+Game.init = function(Game){
+  <u>// type code in here!</u>
+
+}</code></pre>
+<!--<h3>Game.score</h3>
 
 <pre><code>Game.score = 0;   <u>// initialize or reset</u>
-</code></pre>
+</code></pre>-->
 
-<h3>Game.hero</h3>
-<p>Creates a Hero object and places it at x,y position.</p>
+<h3>Hero 1</h3>
+<p>Creates a <em>Hero 1</em> object and places it at x,y position.</p>
 
 <pre><code>Game.hero = spawnHero(0,0);
 </code></pre>

@@ -115,7 +115,25 @@ h2{
   }
 }
 
-h3, h4, h5, h6{
+h3{
+  color: $teal;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+  font-size: 16px;
+  line-height: 18px;
+
+  @include breakpoint(medium){
+    font-size: 20px;
+    line-height: 24px
+  }
+
+  @include breakpoint(large){
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
+
+h4, h5, h6{
   color: $pink;
   font-size: 14px;
   line-height: 16px;
@@ -843,6 +861,18 @@ code{
     text-decoration: none;
     color: #777;
   }
+}
+
+li > u{
+  background-color: #2A2A2A;
+  font-family: 'Ubuntu Mono', 'Courier New', 'courier', sans-serif;
+  color: #EEE;
+  font-weight: normal;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-top: 0.5rem;
 }
 
 // FOOTER

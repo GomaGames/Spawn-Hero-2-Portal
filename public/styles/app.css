@@ -4974,6 +4974,26 @@ li > u {
   text-decoration: none;
   margin-top: 0.5rem; }
 
+.game-container {
+  max-width: 920px;
+  margin: auto;
+  padding-top: 1rem;
+  text-align: center; }
+  .game-container h1, .game-container h2, .game-container h3, .game-container p {
+    text-align: center;
+    margin: 0;
+    padding: 0; }
+  .game-container p {
+    color: #BCBCBC; }
+  .game-container #openfl-content {
+    margin-top: 1rem; }
+  .game-container a.back-to-games {
+    display: inline-block;
+    color: #898989;
+    margin-top: 1rem; }
+    .game-container a.back-to-games:hover {
+      color: #EC6C20; }
+
 .footer-container {
   background-color: #343434;
   padding: 1.25rem 0; }

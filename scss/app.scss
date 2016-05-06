@@ -875,6 +875,40 @@ li > u{
   margin-top: 0.5rem;
 }
 
+// GAME
+
+.game-container{
+  // background-color: pink;
+  max-width: 920px;
+  margin: auto;
+  padding-top: 1rem;
+  text-align: center;
+
+  h1, h2, h3, p{
+    text-align: center;
+    margin: 0;
+    padding:0;
+  }
+
+  p{
+    color: $medium-gray;
+  }
+
+  #openfl-content{
+    margin-top: 1rem;
+  }
+
+  a.back-to-games{
+    display: inline-block;
+    color: darken($medium-gray, 20%);
+    margin-top: 1rem;
+
+    &:hover{
+      color: $orange;
+    }
+  }
+}
+
 // FOOTER
 
 .footer-container{

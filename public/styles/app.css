@@ -4279,6 +4279,8 @@ table.hover tr:nth-of-type(even):hover {
   .big-button:hover {
     background-color: #e6c203;
     color: #9a8202; }
+  .big-button:focus {
+    color: #9a8202; }
   @media screen and (min-width: 40em) {
     .big-button {
       display: inline-block;
@@ -4520,6 +4522,8 @@ a.upload-button {
   a.upload-button:hover {
     background-color: #e6c203;
     color: #9a8202; }
+  a.upload-button:focus {
+    color: #9a8202; }
   @media screen and (min-width: 40em) {
     a.upload-button {
       display: inline-block;
@@ -4589,7 +4593,63 @@ span.image-right {
     .standard-container h1 {
       text-align: left; } }
 
-.sidebar-button {
+.sidebar-materials .sidebar-button {
+  display: block;
+  background-color: #EC6C20;
+  color: #81370b;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+  .sidebar-materials .sidebar-button:hover {
+    background-color: #c85511;
+    color: #81370b; }
+  .sidebar-materials .sidebar-button:focus {
+    color: #81370b; }
+  @media screen and (min-width: 40em) {
+    .sidebar-materials .sidebar-button {
+      display: inline-block;
+      padding: 1rem 3rem; } }
+  @media screen and (min-width: 56.25em) {
+    .sidebar-materials .sidebar-button {
+      padding: 1rem 4.5rem; } }
+  @media screen and (min-width: 40em) {
+    .sidebar-materials .sidebar-button {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+
+.sidebar-resources .sidebar-button {
+  display: block;
+  background-color: #E53B51;
+  color: #8e1323;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+  .sidebar-resources .sidebar-button:hover {
+    background-color: #d11c33;
+    color: #8e1323; }
+  .sidebar-resources .sidebar-button:focus {
+    color: #8e1323; }
+  @media screen and (min-width: 40em) {
+    .sidebar-resources .sidebar-button {
+      display: inline-block;
+      padding: 1rem 3rem; } }
+  @media screen and (min-width: 56.25em) {
+    .sidebar-resources .sidebar-button {
+      padding: 1rem 4.5rem; } }
+  @media screen and (min-width: 40em) {
+    .sidebar-resources .sidebar-button {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+
+.sidebar-publish .sidebar-button {
   display: block;
   background-color: #FCD920;
   color: #9a8202;
@@ -4600,22 +4660,25 @@ span.image-right {
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem; }
-  .sidebar-button:hover {
+  .sidebar-publish .sidebar-button:hover {
     background-color: #e6c203;
     color: #9a8202; }
+  .sidebar-publish .sidebar-button:focus {
+    color: #9a8202; }
   @media screen and (min-width: 40em) {
-    .sidebar-button {
+    .sidebar-publish .sidebar-button {
       display: inline-block;
       padding: 1rem 3rem; } }
   @media screen and (min-width: 56.25em) {
-    .sidebar-button {
+    .sidebar-publish .sidebar-button {
       padding: 1rem 4.5rem; } }
   @media screen and (min-width: 40em) {
-    .sidebar-button {
+    .sidebar-publish .sidebar-button {
       padding-left: 2rem;
       padding-right: 2rem; } }
-  .sidebar-button + .sidebar-button {
-    margin-top: 0.5rem; }
+
+.sidebar-button + .sidebar-button {
+  margin-top: 0.5rem; }
 
 .generic-container {
   background-color: #FEFEFE; }
@@ -4854,6 +4917,8 @@ p.notice {
     margin: auto; }
     .submit-game-footer .submit-game-button:hover {
       background-color: #2f8f8f;
+      color: #1c5555; }
+    .submit-game-footer .submit-game-button:focus {
       color: #1c5555; }
     @media screen and (min-width: 40em) {
       .submit-game-footer .submit-game-button {

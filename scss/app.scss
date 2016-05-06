@@ -21,6 +21,10 @@
     color: darken($button-color, 25%);
   }
 
+  &:focus{
+    color: darken($button-color, 25%);
+  }
+
   @include breakpoint(medium){
     display: inline-block;
     padding: 1rem 3rem;
@@ -419,16 +423,44 @@ span.image-right{
 }
 
 .sidebar-button{
-  @include big-button($yellow);
 
-  display: block;
-  width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  .sidebar-materials &{
+    @include big-button($orange);
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
-  @include breakpoint(medium){
-    padding-left: 2rem;
-    padding-right: 2rem;
+    @include breakpoint(medium){
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .sidebar-resources &{
+    @include big-button($pink);
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include breakpoint(medium){
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .sidebar-publish &{
+    @include big-button($yellow);
+    display: block;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include breakpoint(medium){
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
   + .sidebar-button{

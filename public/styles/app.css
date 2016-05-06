@@ -4454,13 +4454,15 @@ ul.file-structure {
   border-radius: 2px; }
   ul.file-structure li {
     list-style-type: none;
-    color: #EC6C20; }
+    color: #343434; }
+    ul.file-structure li span {
+      font-family: 'Lato', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      color: #818181; }
+    ul.file-structure li.highlighted {
+      color: #EC6C20; }
   ul.file-structure ul {
     margin-top: 0.75rem; }
-  ul.file-structure span {
-    font-family: 'Lato', Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    color: #818181; }
 
 .content {
   background-color: #FEFEFE; }

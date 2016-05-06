@@ -236,17 +236,21 @@ ul.file-structure{
   
   li{
     list-style-type: none;
-    color: $orange;
+    color: $dark-gray;
+
+    span{
+      font-family: 'Lato', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      color: lighten($dark-gray, 30%);
+    }
+
+    &.highlighted{
+      color: $orange;
+    }
   }
 
   ul{
     margin-top: 0.75rem;
-  }
-
-  span{
-    font-family: 'Lato', Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    color: lighten($dark-gray, 30%);
   }
 }
 

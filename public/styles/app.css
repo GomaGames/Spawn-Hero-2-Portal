@@ -4179,29 +4179,40 @@ table.hover tr:nth-of-type(even):hover {
           animation-delay: 700ms !important; }
 
 .top-bar {
-  padding: 0.5rem 0.625rem; }
+  padding: 0 0.625rem; }
   @media screen and (min-width: 40em) {
     .top-bar {
-      padding: 0.5rem 0.9375rem; } }
+      padding: 0 0.9375rem; } }
 
 .top-bar-title {
   float: none;
   margin-right: 0; }
   .top-bar-title h2 {
-    font-size: 13px;
-    line-height: 14px;
-    text-align: center; }
-    .top-bar-title h2 a {
-      color: #BCBCBC; }
-      .top-bar-title h2 a span.title {
-        font-weight: 700; }
-      .top-bar-title h2 a span.subtitle {
-        font-size: 12px;
-        font-weight: 300;
-        border-left: 1px solid #676767;
+    font-size: 15px;
+    line-height: 1;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #BCBCBC; }
+    .top-bar-title h2 span.title {
+      font-weight: 700;
+      display: inline-block; }
+      .top-bar-title h2 span.title a {
         color: #BCBCBC;
-        margin-left: 5px;
-        padding-left: 8px; }
+        padding: 0.75rem 0.5rem 0 0; }
+        .top-bar-title h2 span.title a:hover {
+          color: #EC6C20; }
+    .top-bar-title h2 span.subtitle {
+      font-weight: 300;
+      display: inline-block;
+      color: #BCBCBC; }
+      .top-bar-title h2 span.subtitle a {
+        color: #BCBCBC;
+        padding: 1rem 0.5rem;
+        display: inline-block; }
+        .top-bar-title h2 span.subtitle a:hover {
+          background-color: #272727;
+          color: #FCD920; }
 
 .mobile-menu-button {
   height: 30px;
@@ -4266,7 +4277,8 @@ table.hover tr:nth-of-type(even):hover {
   border-radius: 2px;
   border: 0; }
   .big-button:hover {
-    background-color: #e6c203; }
+    background-color: #e6c203;
+    color: #9a8202; }
   @media screen and (min-width: 40em) {
     .big-button {
       display: inline-block;
@@ -4281,11 +4293,51 @@ body {
 header {
   background-color: #343434; }
 
-h1 {
-  color: #2f8f8f;
+h1, h2, h3, h4, h5, h6 {
+  color: #a3a3a3;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px; }
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem; }
+  h1 + p,
+  h1 + ol,
+  h1 + ul, h2 + p,
+  h2 + ol,
+  h2 + ul, h3 + p,
+  h3 + ol,
+  h3 + ul, h4 + p,
+  h4 + ol,
+  h4 + ul, h5 + p,
+  h5 + ol,
+  h5 + ul, h6 + p,
+  h6 + ol,
+  h6 + ul {
+    margin-top: 0.5rem; }
+    @media screen and (min-width: 40em) {
+      h1 + p,
+      h1 + ol,
+      h1 + ul, h2 + p,
+      h2 + ol,
+      h2 + ul, h3 + p,
+      h3 + ol,
+      h3 + ul, h4 + p,
+      h4 + ol,
+      h4 + ul, h5 + p,
+      h5 + ol,
+      h5 + ul, h6 + p,
+      h6 + ol,
+      h6 + ul {
+        margin-top: 0.75rem; } }
+
+h1 {
+  color: #EC6C20;
+  font-weight: 400;
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 18px; }
+  h1:first-of-type {
+    margin-top: 0; }
   @media screen and (min-width: 40em) {
     h1 {
       font-weight: 300;
@@ -4295,36 +4347,34 @@ h1 {
     h1 {
       font-size: 40px;
       line-height: 48px; } }
-  h1 + p {
-    margin-top: 0.75rem; }
 
-h2, h3, h4, h5, h6 {
-  color: #2f8f8f;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px; }
+h2 {
+  color: #3CB5B5;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+  font-size: 16px;
+  line-height: 18px; }
   @media screen and (min-width: 40em) {
-    h2, h3, h4, h5, h6 {
+    h2 {
       font-size: 20px;
       line-height: 24px; } }
   @media screen and (min-width: 56.25em) {
-    h2, h3, h4, h5, h6 {
+    h2 {
       font-size: 22px;
       line-height: 26px; } }
-  h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-    margin-top: 0.5rem; }
-    @media screen and (min-width: 40em) {
-      h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-        margin-top: 0.75rem; } }
 
-h3 {
-  color: #3CB5B5;
-  font-size: 16px;
-  line-height: 18px;
-  margin-bottom: 0.25rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  margin-top: 2rem; }
+h3, h4, h5, h6 {
+  color: #E53B51;
+  font-size: 14px;
+  line-height: 16px; }
+  @media screen and (min-width: 40em) {
+    h3, h4, h5, h6 {
+      font-size: 16px;
+      line-height: 22px; } }
+  @media screen and (min-width: 56.25em) {
+    h3, h4, h5, h6 {
+      font-size: 16px;
+      line-height: 22px; } }
 
 p, li {
   color: #343434;
@@ -4338,17 +4388,60 @@ p, li {
     margin-top: 0.5rem; }
   p + h2, li + h2 {
     margin-top: 1rem; }
+  p a, li a {
+    font-weight: bold; }
+  p em, li em {
+    font-weight: 700; }
+  p + li, li + li {
+    margin-top: 0.75rem; }
+  p img, li img {
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  p ul,
+  p ol, li ul,
+  li ol {
+    margin-top: 0.5rem; }
 
 .generic-content li {
   margin-bottom: 0.5rem; }
 
-p + ul {
+p + ul,
+h1 + ul,
+h2 + ul,
+h3 + ul,
+h4 + ul {
   margin-top: 1rem; }
 
 @media screen and (min-width: 56.25em) {
   p.small {
     font-size: 13px;
     line-height: 18px; } }
+
+p.rating span {
+  color: #898989;
+  margin: 0 1px;
+  font-size: 20px; }
+
+ul.file-structure {
+  font-family: "Courier New", "Courier", monospace;
+  font-weight: bold;
+  margin-top: 1rem;
+  background-color: #E6E6E6;
+  padding: 1rem;
+  margin-left: 0;
+  border-radius: 2px; }
+  ul.file-structure li {
+    list-style-type: none;
+    color: #EC6C20; }
+  ul.file-structure ul {
+    margin-top: 0.75rem; }
+  ul.file-structure span {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #818181; }
 
 .content {
   background-color: #FEFEFE; }
@@ -4405,6 +4498,15 @@ h1.hero-title + p.hero-paragraph {
     h1.hero-title + p.hero-paragraph {
       margin-top: 2rem; } }
 
+p.hero-paragraph + p.hero-paragraph {
+  margin-top: 1rem; }
+  p.hero-paragraph + p.hero-paragraph a {
+    font-weight: bold;
+    color: #FCD920; }
+
+i.fa {
+  margin-right: 0.5rem; }
+
 a.upload-button {
   display: block;
   background-color: #FCD920;
@@ -4416,7 +4518,8 @@ a.upload-button {
   margin-left: 1.25rem;
   margin-right: 1.25rem; }
   a.upload-button:hover {
-    background-color: #e6c203; }
+    background-color: #e6c203;
+    color: #9a8202; }
   @media screen and (min-width: 40em) {
     a.upload-button {
       display: inline-block;
@@ -4481,11 +4584,38 @@ span.image-right {
         padding-top: 0; } }
 
 .standard-container h1 {
-  text-align: center;
-  margin-bottom: 2rem; }
+  text-align: center; }
   @media screen and (min-width: 56.25em) {
     .standard-container h1 {
       text-align: left; } }
+
+.sidebar-button {
+  display: block;
+  background-color: #FCD920;
+  color: #9a8202;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+  .sidebar-button:hover {
+    background-color: #e6c203;
+    color: #9a8202; }
+  @media screen and (min-width: 40em) {
+    .sidebar-button {
+      display: inline-block;
+      padding: 1rem 3rem; } }
+  @media screen and (min-width: 56.25em) {
+    .sidebar-button {
+      padding: 1rem 4.5rem; } }
+  @media screen and (min-width: 40em) {
+    .sidebar-button {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+  .sidebar-button + .sidebar-button {
+    margin-top: 0.5rem; }
 
 .generic-container {
   background-color: #FEFEFE; }
@@ -4723,7 +4853,8 @@ p.notice {
     border: 0;
     margin: auto; }
     .submit-game-footer .submit-game-button:hover {
-      background-color: #2f8f8f; }
+      background-color: #2f8f8f;
+      color: #1c5555; }
     @media screen and (min-width: 40em) {
       .submit-game-footer .submit-game-button {
         display: inline-block;
@@ -4731,6 +4862,26 @@ p.notice {
     @media screen and (min-width: 56.25em) {
       .submit-game-footer .submit-game-button {
         padding: 1rem 4.5rem; } }
+
+pre {
+  white-space: pre;
+  display: block;
+  margin: 0.5rem 0; }
+
+code {
+  font-family: 'Ubuntu Mono', 'Courier New', 'courier', sans-serif;
+  color: #EEE;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  background-color: #2A2A2A;
+  border: 0;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 2px; }
+  code u {
+    text-decoration: none;
+    color: #777; }
 
 .footer-container {
   background-color: #343434;

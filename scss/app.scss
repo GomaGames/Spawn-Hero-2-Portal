@@ -18,6 +18,7 @@
 
   &:hover{
     background-color: darken($button-color, 10%);
+    color: darken($button-color, 25%);
   }
 
   @include breakpoint(medium){
@@ -49,12 +50,36 @@ header{
 
 // TYPOGRAPHY
 
-h1{
-  color: darken($teal, 10%);
+h1,h2,h3,h4,h5,h6{
+  color: darken($medium-gray, 10%);
   font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+  
+  + p,
+  + ol,
+  + ul{
+    margin-top: 0.5rem;
 
-  font-size: 24px;
-  line-height: 28px;
+    @include breakpoint(medium){
+      margin-top: 0.75rem;
+    }
+  }
+}
+
+h1{
+  color: $orange;
+  font-weight: 400;
+  margin-top: 0;
+
+  font-size: 16px;
+  line-height: 18px;
+
+  &:first-of-type{
+    margin-top: 0;
+  }
 
   @include breakpoint(medium){
     font-weight: 300;
@@ -66,45 +91,40 @@ h1{
     font-size: 40px;
     line-height: 48px;
   }
-
-  + p{
-    margin-top: 0.75rem;
-  }
 }
 
-h2,h3,h4,h5,h6{
-  color: darken($teal, 10%);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
+h2{
+  color: $teal;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+  font-size: 16px;
+  line-height: 18px;
 
   @include breakpoint(medium){
     font-size: 20px;
-    line-height: 24px;
+    line-height: 24px
   }
 
   @include breakpoint(large){
     font-size: 22px;
     line-height: 26px;
   }
-  
-  + p{
-    margin-top: 0.5rem;
-
-    @include breakpoint(medium){
-      margin-top: 0.75rem;
-    }
-  }
 }
 
-h3{
-  color: $teal;
-  font-size: 16px;
-  line-height: 18px;
-  margin-bottom: 0.25rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  margin-top: 2rem;
+h3, h4, h5, h6{
+  color: $pink;
+  font-size: 14px;
+  line-height: 16px;
+
+  @include breakpoint(medium){
+    font-size: 16px;
+    line-height: 22px
+  }
+
+  @include breakpoint(large){
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
 
 p, li{
@@ -124,13 +144,42 @@ p, li{
   + h2{
     margin-top: 1rem;
   }
+
+  a{
+    font-weight: bold;
+  }
+
+  em{
+    font-weight: 700;
+  }
+
+  + li{
+    margin-top: 0.75rem;
+  }
+
+  img{
+    display: block;
+    max-width: 100%;
+    max-height: 400px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul,
+  ol{
+    margin-top: 0.5rem;
+  }
 }
 
 .generic-content li{
   margin-bottom: 0.5rem;
 }
 
-p + ul{
+p + ul,
+h1 + ul,
+h2 + ul,
+h3 + ul,
+h4 + ul{
   margin-top: 1rem;
 }
 
@@ -139,6 +188,39 @@ p.small{
   @include breakpoint(large){
     font-size: 13px;
     line-height: 18px;
+  }
+}
+
+p.rating{
+  span{
+    color: darken($medium-gray, 20%);
+    margin: 0 1px;
+    font-size: 20px;
+  }
+}
+
+ul.file-structure{
+  font-family: "Courier New", "Courier", monospace;
+  font-weight: bold;
+  margin-top: 1rem;
+  background-color: $light-gray;
+  padding: 1rem;
+  margin-left: 0;
+  border-radius: 2px;
+  
+  li{
+    list-style-type: none;
+    color: $orange;
+  }
+
+  ul{
+    margin-top: 0.75rem;
+  }
+
+  span{
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: lighten($dark-gray, 30%);
   }
 }
 
@@ -232,8 +314,17 @@ h1.hero-title + p.hero-paragraph{
   }
 }
 
-p.hero-paragraph{
+p.hero-paragraph + p.hero-paragraph{
+  margin-top: 1rem;
 
+  a{
+    font-weight: bold;
+    color: $yellow;
+  }
+}
+
+i.fa{
+  margin-right: 0.5rem;
 }
 
 a.upload-button{
@@ -320,10 +411,28 @@ span.image-right{
 
 .standard-container h1{
   text-align: center;
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 
   @include breakpoint(large){
     text-align: left;
+  }
+}
+
+.sidebar-button{
+  @include big-button($yellow);
+
+  display: block;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include breakpoint(medium){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  + .sidebar-button{
+    margin-top: 0.5rem;
   }
 }
 
@@ -499,6 +608,8 @@ p.notice{
   .game{
     border-radius: 3px;
     margin-bottom: 0.75rem;
+    // background-repeat: no-repeat;
+    // background-position: right 10px;
 
     @include breakpoint(medium){
       margin-bottom: 1.75rem;
@@ -532,6 +643,7 @@ p.notice{
 
     h2{
       padding:0;
+      // padding-right: 2.75rem;
       margin:0;
       font-size: 18px;
       line-height: 22px;
@@ -586,6 +698,7 @@ p.notice{
     &:nth-of-type(4n+4){
       .game{
         background-color: $orange;
+        // background-image: url(http://placehold.it/50x50/F29A66/EC6C20);
       }
       a.play-button{
         background-color: lighten($orange, 15%);
@@ -601,6 +714,7 @@ p.notice{
     &:nth-of-type(4n+1){
       .game{
         background-color: $pink;
+        // background-image: url(http://placehold.it/50x50/EE7F8D/E53B51);
       }
       a.play-button{
         background-color: lighten($pink, 15%);
@@ -616,6 +730,7 @@ p.notice{
     &:nth-of-type(4n+2){
       .game{
         background-color: $teal;
+        // background-image: url(http://placehold.it/50x50/6ECFCF/3CB5B5);
       }
       a.play-button{
         background-color: lighten($teal, 15%);
@@ -631,6 +746,7 @@ p.notice{
     &:nth-of-type(4n+3){
       .game{
         background-color: $yellow;
+        // background-image: url(http://placehold.it/50x50/FEEE9E/FCD920);
       }
       a.play-button{
         background-color: lighten($yellow, 25%);
@@ -668,6 +784,32 @@ p.notice{
   .submit-game-button{
     @include big-button($teal);
     margin: auto;
+  }
+}
+
+// CODE
+
+pre {
+  white-space: pre;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+code{
+  font-family: 'Ubuntu Mono', 'Courier New', 'courier', sans-serif;
+  color: #EEE;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  background-color: #2A2A2A;
+  border:0;
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+
+  u{
+    text-decoration: none;
+    color: #777;
   }
 }
 

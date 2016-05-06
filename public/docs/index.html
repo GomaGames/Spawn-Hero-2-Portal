@@ -52,254 +52,124 @@
             SpawnHero 2
           </h2>
           
-          <p>The only file that needs to be edited is the <strong style="">game.js</strong> file. This is what a game.js file looks like initially:</p>
+          <p>The only file that needs to be edited is the <strong style="">game.js</strong> file. The game.js file is initially blank. All you need to do is start adding code!</p>
           
           <!-- DOCS -->
 
-<pre>
-<code><u>// Main Game File</u>
-function Game(){};
+<h2>Game Rules</h2>
+<p>At minimum, the game requires <em>hero_1</em>, <em>hero_2</em>, and at least 1 <em>gem</em> in order for the game to be winnable.</p>
+<h3>The Win Condition</h3>
+<p>The game ends when all gems are picked up. The player to gather the most jewels within the time limit given wins the game. If gems are not all picked up before time runs out, the player with the most hems wins.</p>
+<h3>Other Rules</h3>
+<ul>
+  <li>If a player touches an enemy they will be sent back to their start position.</li>
+  <li>If a player touches freeze, they will be frozen for the time indicated in the settings.</li>
+  <li>If a player touches slow, they will be slowed down for the time indicated in the settings.</li>
+  <li>If a player touches speed, they will speed up for the time indicated in the settings.</li>
+</ul>
+<h2>Game Settings</h2>
 
-<u>// Global Game Settings
+<h3>Game Duration</h3>
 
-// Game Title</u>
-Game.title = "Title Goes Here";
-
-<u>// Game Skins</u>
-
-
-<u>// Game Initializer</u>
-Game.init = function(Game){
-  <u>// type code in here!</u>
-
-}
-
-<u>// Game Loop (runs 60 times per second)</u>
-Game.loop = function(Game,frame){
-
-}</code></pre>
-
-<h2>Code Sections</h2>
-<p>
-  <b>Global Game Settings</b>: is where you set global variables for your game.
-</p>
-<p>
-  <b>Game Initializer</b>: is where you write most of your code to design your level. The commands in this will only run once.
-</p>
-<p>
-  <b>Game Loop</b>: is where you can write commands that will run every frame during gameplay. Be careful when writing code in here since mistakes in this block may cause your game (or even computer) to crash.
-</p>
-
-<h2>Global Game Settings:</h2>
-<p>Replace "file path" with the actual path to your assets.</p>
-
-<pre>
-<code><u>// Global Game Settings
-
-// Game Title</u>
-Game.title = "<u>title</u>";
-
-<u>// Game Skins</u>
-Game.game_bg = "<u>file path</u>";
-Game.hero_skin = "<u>file path</u>";
-Game.hero_attack_skin = "<u>file path</u>";
-Game.hero_sword_skin = "<u>file path</u>";
-Game.enemy_skin = "<u>file path</u>";
-Game.gem_skin = "<u>file path</u>";
-Game.wall_skin = "<u>file path</u>";
-Game.powerup_skin_freeze = "<u>file path</u>";
-Game.powerup_skin_speed = "<u>file path</u>";
-Game.powerup_skin_slow = "<u>file path</u>";
-</code>
-</pre>
-
-<h2>Game Initializer (Game.init)</h2>
-<p>These functions and commands can be called inside the Game Initializer</p>
-
-<pre>
-<code><u>// Game Initializer</u>
-Game.init = function(Game){
-  <u>// type code in here!</u>
-
-}</code></pre>
-<!--<h3>Game.score</h3>
-
-<pre><code>Game.score = 0;   <u>// initialize or reset</u>
-</code></pre>-->
+<pre><code>Settings.time_limit = 10;</code></pre>
 
 <h3>Hero 1</h3>
-<p>Creates a <em>Hero 1</em> object and places it at x,y position.</p>
 
-<pre><code>Game.hero = spawnHero(0,0);
+<pre><code>Settings.hero_1.skin = "assets/images/graphic-29.png";
+Settings.hero_1.speed = 300;
 </code></pre>
 
-<h3>Game.hero.speed = number;</h3>
-<p>Sets the hero's speed.</p>
-
-<pre><code>Game.hero.speed = 2;
+<h3>Enemy Defaults</h3>
+<p>This sets a default speed and appearance for enemies. These settings can be overriden for each enemy placed on the map.</p>
+<pre><code>Settings.enemy.default_speed = 100;
+Settings.enemy.default_skin = "assets/images/graphic-06.png";
 </code></pre>
 
-<h3>Game.hero.attack_duration = number;</h3>
-<p>Sets the hero's attack duration.</p>
-
-<pre><code>Game.hero.attack_duration = 2;
+<h3>Wall Skin</h3>
+<p>This sets an appearance for all wall tiles.</p>
+<pre><code>Settings.wall.skin = "assets/images/graphic-39.png";
 </code></pre>
 
-<h3>Game.hero.sword_distance = number;</h3>
-<p>Sets the hero's sword distance.</p>
-
-<pre><code>Game.hero.sword_distance = 2;
+<h3>Gem Defaults</h3>
+<p>This sets a default points value and appearance for gems. These settings can be overriden for each gem placed on the map.</p>
+<pre><code>Settings.gem.default_points = 5;
+Settings.gem.default_skin = "assets/images/graphic-06.png";
 </code></pre>
 
-<h3>Game.hero.attack_delay = number;</h3>
-<p>Sets the hero's attack delay.</p>
+<h3>Game Assets</h3>
+<p>For any of the objects above that have a "skin" setting, you can define what graphic you want to use from sprites available in the <em>assets/images</em> directory. Here are all the sprites that are available for you to use:
+  <img src="/images/assets-1.png" alt="Assets 1" style="max-width: 100%;max-height:100%;">
+  <img src="/images/assets-2.png" alt="Assets 2" style="max-width: 100%;max-height:100%;">
+</p>
+<p>If you want to use your own original sprites, you will need to host them online (on your own server) and insert the full url to the sprites. All sprites are made @2x (80 x 80) and displayed at half-size (40 x 40).</p>
 
-<pre><code>Game.hero.attack_delay = 2;
+<h2>Placing Objects</h2>
+<p>Each tile in the grid is 40 x 40. To determine the x and y position of an object, multiply the tile x and y numbers from the paper prototype by 40.</p>
+
+<h3>Hero 1</h3>
+<p>Create a <em>hero_1</em> object and place it at x,y position.</p>
+
+<pre><code>Spawn.hero_1(0, 0);
 </code></pre>
 
-<h3>placeWall( <span>3</span>, <span>3</span> );</h3>
-<p>Creates a wall and places it at x,y position.</p>
+<h3>Hero 2</h3>
+<p>Create a <em>hero_2</em> object and place it at x,y position.</p>
 
-<pre><code>placeWall(3,3);
+<pre><code>Spawn.hero_2(40, 40);
 </code></pre>
 
-<h3>placeWall( );</h3>
-<p>Creates a single wall block and places it at random position. To spawn a random block every n-seconds, see Loops (Game.init).</p>
+<h3>Wall</h3>
+<p>Create a wall object and place it at x,y position.</p>
 
-<pre><code>placeWall( );
+<pre><code>Spawn.wall(120,120);
 </code></pre>
       
-<h3>spawnEnemy( <span>3</span>, <span>3</span>, <span>"x"</span>, <span>1</span> );</h3>
-<p>Creates an Enemy and places it at x,y position.<br>
-direction must be "x" or "y"<br>
-speed must be a number</p>
-
-<pre><code>spawnEnemy(3,3);
+<h3>Enemy</h3>
+<ul>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn an enemy at ( x,y ) position. The third argument is a direction in quote marks. It is either <em>"up"</em>, <em>"down"</em>, <em>"left"</em>, or <em>"right"</em>. The enemy will start walking in the direction defined and will continue walking until it bumps into an object (then it will walk in the opposite direction). These first 3 arguments are all required.
+<pre><code>Spawn.enemy(120,120, "down");
 </code></pre>
- 
-<h3>spawnEnemy( );</h3>
-<p>Creates a single enemy and places it at a random position. To spawn a random enemy every n-seconds, see Loops (Game.init).</p>
-
-<pre><code>spawnEnemy( );
+  </li>
+  <li>The fourth argument is enemy speed (optional). If it is not set, the default speed will be used. Speed is defined in milliseconds.
+<pre><code>Spawn.enemy(120,120, "down", 600);
 </code></pre>
-
-<h3>placeGem( <span>3</span>, <span>3</span> );</h3>
-<p>Creates a gem (collectible) and places it at x,y position.</p>
-
-<pre><code>placeGem(3,3);
+  </li>
+  <li>The fifth argument is skin (optional). If it is not set, the default will be used.
+<pre><code>Spawn.enemy(120,120, "down", 600, "assets/images/graphic016.png");
 </code></pre>
+  </li>
+</ul>
+
+<h3>Gem</h3>
+<ul>
+  <li>The first 2 arguments <em>x</em> and <em>y</em> spawn a gem at ( x,y ) position. These first 2 arguments are required.
+<pre><code>Spawn.gem(120,120);
+</code></pre>
+  </li>
+  <li>The third argument is a point value for the gem (optional). If a value is not set, the default value will be used
+<pre><code>Spawn.gem(120,120, 10);
+</code></pre>
+  </li>
+  <li>The fourth argument is skin (optional). If it is not set, the default skin will be used.
+<pre><code>Spawn.gem(120,120, 10, "assets/images/graphic016.png");
+</code></pre>
+  </li>
+</ul>
         
-<h3>placeGem( );</h3>
-<p>Creates a single gem (collectible) and places it in a random position. To spawn a random gem every n-seconds, see Loops (Game.init).</p>
+<h3>Speed</h3>
+<p>Create a "speed" powerup. It makes the player move faster. Player will speed up for the duration defined in Settings.</p>
 
-<pre><code>placeGem( );
-</code></pre>
+<pre><code>Spawn.speed(160,160);</code></pre>
 
-<h3>placePowerUp( <span>"type"</span>, <span>3</span>, <span>3</span> );</h3>
-<p>Creates a PowerUp of kind "type", and places it at x,y position.<br>
-PowerUp types are "speed", "freeze" or "slow".</p>
+<h3>Slow</h3>
+<p>Create a "slow" hazard. It makes the player move slower. Player will be slowed down for the duration defined in Settings.</p>
 
-<pre><code>placePowerUp("speed",3,3);</code></pre>
+<pre><code>Spawn.slow(160,160);</code></pre>
 
-<h3>placePowerUp( "type" );</h3>
-<p>
-  Creates a PowerUp of kind "type", and places it at a random position. To spawn a random powerup of a certain "type" every n-seconds, see Loops (Game.init).<br>PowerUp types are "speed", "freeze" or "slow".
-</p>
+<h3>Freeze</h3>
+<p>Create a "freeze" powerup. It will freeze the player for the duration defined in Settings.</p>
 
-<pre><code>placePowerUp("speed");
-</code></pre>
-
-<h2>Loops (Game.init)</h2>
-<p>If you want to run a command every n-milliseconds, then use the <em>every</em> command inside the Game Initializer (NOT the Game Loop! )</p>
-
-<pre><code>Game.init = function(Game){
-
-  <u>// place loops in here!!
-
-  // do this every 12 seconds</u>
-  every(12000, function(){
-    spawnEnemy();
-  });
-
-}
-</code></pre>
-
-<h3>every( 12000, function( ){  });</h3>
-<p>Runs a block of code every 12000 milliseconds. Replace 12000 with any number (milliseconds).</p>
-
-<pre><code><u>// every 12 seconds, place a random enemy</u>
-every(12000, function(){
-
-});
-</code></pre>
-
-<h3>spawnEnemy( );</h3>
-<p>Creates an Enemy and places it at a random position. Place this inside an every function.</p>
-
-<pre><code><u>// every 12 seconds, place a random enemy</u>
-every(12000, function(){
-
-  spawnEnemy();
-
-});
-</code></pre>
-
-<h3>placeGem( );</h3>
-<p>Creates a gem (collectible) and places it at a random position. Place this inside an every function.</p>
-
-<pre><code><u>// every 12 seconds, place a random gem</u>
-every(12000, function(){
-
-  placeGem();
-
-});
-</code></pre>
-
-<h3>placeWall( );</h3>
-<p>Creates a wall and places it at a random position. Place this inside an every function.</p>
-
-<pre><code><u>// every 12 seconds, place a random wall</u>
-every(12000, function(){
-
-  placeWall();
-
-});</code></pre>
-
-<h3>placePowerUp( <span>"type"</span> );</h3>
-<p>Creates a PowerUp of kind "type", and places it at a random position. Place this inside an every function.<br>
-PowerUp types are "speed", "freeze" or "slow".</p>
-
-<pre><code><u>// every 12 seconds, place a random "freeze" powerup</u>
-every(12000, function(){
-
-  placePowerUp("freeze");
-
-});</code></pre>
-
-<h2>Game Loop (Game.loop)</h2>
-<p>If you want to run commands every game frame (that's about 60 times per second!), then put your commands inside of the Game Loop block. example:</p>
-
-<pre><code>Game.loop = function(Game,frame){
-
-  <u>// check if player has 10 points</u>
-  if( Game.score &gt;= 10 ){
-    Game.win("You Win!");
-  }
-
-}
-</code></pre>
-
-<p>If you want to run commands every nth game frame, then put your Game Loop commands inside of an if/modulus conditional. for example, to run a command every 300 frames (about 5 seconds):</p>
-
-<pre><code>Game.loop = function(Game,frame){
-
-  <u>// place a random wall every 300 frames</u>
-  if( Game.frame % 300 == 0){
-    placeWall();
-  }
-
-}
-</code></pre>
+<pre><code>Spawn.freeze(160,160);</code></pre>
           
 <!-- END DOCS -->
 

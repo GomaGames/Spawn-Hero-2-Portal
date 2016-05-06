@@ -4354,31 +4354,31 @@ h2 {
   color: #3CB5B5;
   margin-bottom: 0.25rem;
   margin-top: 2rem;
-  font-size: 16px;
-  line-height: 18px; }
+  font-size: 18px;
+  line-height: 20px; }
   @media screen and (min-width: 40em) {
-    h2 {
-      font-size: 20px;
-      line-height: 24px; } }
-  @media screen and (min-width: 56.25em) {
     h2 {
       font-size: 22px;
       line-height: 26px; } }
+  @media screen and (min-width: 56.25em) {
+    h2 {
+      font-size: 24px;
+      line-height: 28px; } }
 
 h3 {
-  color: #3CB5B5;
+  color: #E53B51;
   margin-bottom: 0.25rem;
-  margin-top: 2rem;
-  font-size: 16px;
-  line-height: 18px; }
+  margin-top: 1rem;
+  font-size: 12px;
+  line-height: 14px; }
   @media screen and (min-width: 40em) {
     h3 {
-      font-size: 20px;
-      line-height: 24px; } }
+      font-size: 16px;
+      line-height: 20px; } }
   @media screen and (min-width: 56.25em) {
     h3 {
-      font-size: 22px;
-      line-height: 26px; } }
+      font-size: 18px;
+      line-height: 22px; } }
 
 h4, h5, h6 {
   color: #E53B51;
@@ -4404,7 +4404,9 @@ p, li {
   p + p, li + p {
     margin-top: 0.5rem; }
   p + h2, li + h2 {
-    margin-top: 1rem; }
+    margin-top: 2rem; }
+  p + h3, li + h3 {
+    margin-top: 2rem; }
   p a, li a {
     font-weight: bold; }
   p em, li em {

@@ -19,7 +19,7 @@
                 html : games[game].developer
               }),
               $("<a>", {
-                href : "#",
+                href : "/play#"+game,
                 "class" : "play-button",
                 html : [
                   $("<i>", {

@@ -16,7 +16,7 @@
       badGame();
     } else {
       eval(game_data.code); // danger -_-
-      lime.embed ("openfl-content", 920, 640, "FFFFFF");
+      lime.embed ("openfl-content", 920, 680, "FFFFFF");
     }
 
   }, badGame );
